@@ -28,8 +28,7 @@ public class DefaultBadger implements Badger {
         intent.putExtra(INTENT_EXTRA_PACKAGENAME, componentName.getPackageName());
         intent.putExtra(INTENT_EXTRA_ACTIVITY_NAME, componentName.getClassName());
 
-        context.sendBroadcast(intent);
-        // BroadcastHelper.sendDefaultIntentExplicitly(context, intent);
+        BroadcastHelper.sendDefaultIntentExplicitly(context, intent);
     }
 
     @Override
