@@ -50,7 +50,8 @@ public class BroadcastHelper {
             oreoIntent.setAction(IntentConstants.DEFAULT_OREO_INTENT_ACTION);
 
             try {
-                sendIntentExplicitly(context, oreoIntent);
+                context.sendBroadcast(oreoIntent);
+                // sendIntentExplicitly(context, oreoIntent);
                 oreoIntentSuccess = true;
             } catch (ShortcutBadgeException e) {
                 oreoIntentSuccess = false;
@@ -62,6 +63,7 @@ public class BroadcastHelper {
         }
 
         // try pre-Oreo default intent
-        sendIntentExplicitly(context, intent);
+        context.sendBroadcast(intent);
+        // sendIntentExplicitly(context, intent);
     }
 }
